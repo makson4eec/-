@@ -1,0 +1,25 @@
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Variant2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
+        System.out.print("Введите x: ");
+        if (!scanner.hasNextDouble()) {
+            System.out.println("Ошибка: нужно ввести число.");
+            return;
+        }
+        double x = scanner.nextDouble();
+        if (!Double.isFinite(x)) {
+            System.out.println("Ошибка: x вне области допустимых значений.");
+            return;
+        }
+        double y = 4 * Math.pow(x, 3) + 23 * x - 55;
+        if (!Double.isFinite(y)) {
+            System.out.println("Ошибка вычисления: результат не определён.");
+            return;
+        }
+        System.out.println("y = " + y);
+    }
+}

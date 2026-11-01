@@ -1,0 +1,13 @@
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Variant5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.US);
+        System.out.println("Введите числа через пробел (дробные через точку):");
+        double a = scanner.nextDouble(), b = scanner.nextDouble();
+        if (a > b) { double temp = a; a = b; b = temp; }
+        System.out.println("A = " + a + ", B = " + b);
+    }
+}
